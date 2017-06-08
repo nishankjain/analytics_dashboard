@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+	<title>AdWyze Dashboard</title>
+	<meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="adwyzeAnalytics" style="width: 100%; height: 100%;">
+	<div style="box-shadow: 0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12); height: 10%; text-align: center; position: fixed; width: 100%; display: table; z-index: 10; top: 0; background-color: #fff;">
+		<div style="display: table-cell; vertical-align: middle;">ADWYZE ANALYTICS</div>
+	</div>
+
+	<div style="position: absolute; top: 10%; width: 100%; height: 90%;" ng-controller="chartController" ng-cloak>
+		<div class="chart-container" style="display: inline-block; padding-right: 5px; padding-left: 5px; height: 100%; background-color: #fafafa; position: absolute; top: 0; left: 0; right: 30%; bottom: 0;">
+
+		<div style="width: 100%; display: block; height: 100%;">
+			<div class="chart-div currently-active" cards-div chart-id="{{chartId}}" style="top: 0; bottom: 0; left: 0; right: 0; box-shadow: 0px 0px 10px 2px rgba(138,138,138,1);">
+			</div>
+		</div>
+
+		</div>
+		<div style="display: inline-block; height: 100%; position: absolute; top: 0; left: 70%; right: 0; bottom: 0; margin-left: 1px; background-color: #fff;">
+			<div class="options-div">
+				<md-button class="md-mini vert-split" split-vert>
+				    <md-icon md-font-set="material-icons"> swap_vert </md-icon>
+				</md-button>
+				<md-button class="md-mini hori-split" split-hori>
+				    <md-icon md-font-set="material-icons"> swap_horiz </md-icon>
+				</md-button>
+		      	<md-input-container style="width: 30%;">
+		         	<label>Chart Type</label>
+	        		<md-select ng-model="chartType">
+		          		<md-option change-chart ng-repeat="chartType in chartTypes" value="{{chartType}}">{{chartType}}</md-option>
+		        	</md-select>
+		      	</md-input-container>
+			</div>
+			<div class="filter-div">
+<!-- 				<md-list>
+					<md-subheader class="md-no-sticky">Data Filter</md-subheader>
+					<md-list-item ng-repeat="(key, value) in filters">
+					    <p> {{key | limitTo: 30}} </p>
+					    <md-checkbox class="md-secondary" ng-if="!typeof(filters[key]) === 'object'" ng-model="key"></md-checkbox>
+					    <div>
+					    	<md-list>
+							    <md-list-item ng-repeat="(key1, value1) in filters[key] track by $index">
+							    	<p> {{key1}} </p>
+					  		    	<md-checkbox class="md-secondary" ng-model="key1"></md-checkbox>
+						    	</md-list-item>
+					    	</md-list>
+					    </div>
+					</md-list-item>
+				</md-list> -->
+				<div>
+					<md-list-item ng-repeat="filter in filters">
+						<p> {{filter | limitTo: 30}} </p>
+						<md-menu>
+					      <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+					        <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon>
+					      </md-button>
+					      <md-menu-content width="4">
+					        <md-menu-item>
+					          <md-button ng-click="ctrl.redial($event)">
+					            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+					            Redial
+					          </md-button>
+					        </md-menu-item>
+					      </md-menu-content>
+					    </md-menu>
+						<md-checkbox class="md-secondary" ng-model="key"></md-checkbox>
+					</md-list-item>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/controllers.js"></script>
+    <script type="text/javascript" src="scripts/directives.js"></script>
+	<script type="text/javascript" src="scripts/barChart.js"></script>
+	<script type="text/javascript" src="scripts/pieChart.js"></script>
+</body>
