@@ -1,1 +1,1 @@
-var adwyzeAnalyticsApp = angular.module('adwyzeAnalytics', ['ngMaterial', 'adwyzeControllers','adwyzeDirectives', 'ngMessages']);
+var demoAnalyticsApp = angular.module('demoAnalytics', ['ngMaterial', 'demoControllers','demoDirectives', 'ngMessages']);
