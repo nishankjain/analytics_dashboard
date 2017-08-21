@@ -38,6 +38,7 @@ demoAppDirectives.directive('changeChart', function() {
 				var currentlyActiveElement = document.querySelector(".currently-active");
 				if (currentlyActiveElement) {
 					var angularElement  = angular.element(currentlyActiveElement);
+					// console.log(angularElement.scope());
 					if (angularElement.scope().activeChart) {
 						angularElement.empty();
 						var selectedChartType = attrs.value;
@@ -157,13 +158,13 @@ var splitHorizontally = function(currentlyActiveElement, $compile, scope) {
 
 	var el = $compile("<div class='chart-div' cards-div chart-id='{{chartId}}'></div>")(scope);
 	el.css({
-			'top': new_top,
-			'right': new_right,
-			'bottom': new_bottom,
-			'left': new_left,
-			'box-shadow': '0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12)',
-			'transition': 'right 0.1s linear 0s'
-		});
+		'top': new_top,
+		'right': new_right,
+		'bottom': new_bottom,
+		'left': new_left,
+		'box-shadow': '0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12)',
+		'transition': 'right 0.1s linear 0s'
+	});
 	angular.element(currentlyActiveElement).after(el);
 };
 
@@ -189,12 +190,12 @@ var splitVertically = function(currentlyActiveElement, $compile, scope) {
 	angular.element(currentlyActiveElement).css('transition', 'bottom 0.2s linear 0s');
 	var el = $compile("<div class='chart-div' cards-div chart-id='{{chartId}}'></div>")(scope);
 	el.css({
-			'top': new_top,
-			'right': new_right,
-			'bottom': new_bottom,
-			'left': new_left,
-			'box-shadow': '0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12)',
-			'transition': 'right 0.1s linear 0s'
-		});
+		'top': new_top,
+		'right': new_right,
+		'bottom': new_bottom,
+		'left': new_left,
+		'box-shadow': '0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12)',
+		'transition': 'right 0.1s linear 0s'
+	});
 	angular.element(currentlyActiveElement).after(el);
 };

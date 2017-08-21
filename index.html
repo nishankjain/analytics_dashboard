@@ -32,42 +32,6 @@
 		        	</md-select>
 		      	</md-input-container>
 			</div>
-			<!-- <div class="filter-div"> -->
-<!-- 				<md-list>
-					<md-subheader class="md-no-sticky">Data Filter</md-subheader>
-					<md-list-item ng-repeat="(key, value) in filters">
-					    <p> {{key | limitTo: 30}} </p>
-					    <md-checkbox class="md-secondary" ng-if="!typeof(filters[key]) === 'object'" ng-model="key"></md-checkbox>
-					    <div>
-					    	<md-list>
-							    <md-list-item ng-repeat="(key1, value1) in filters[key] track by $index">
-							    	<p> {{key1}} </p>
-					  		    	<md-checkbox class="md-secondary" ng-model="key1"></md-checkbox>
-						    	</md-list-item>
-					    	</md-list>
-					    </div>
-					</md-list-item>
-				</md-list> -->
-<!-- 				<div>
-					<md-list-item ng-repeat="filter in filters">
-						<p> {{filter | limitTo: 30}} </p>
-						<md-menu>
-					      <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
-					        <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon>
-					      </md-button>
-					      <md-menu-content width="4">
-					        <md-menu-item>
-					          <md-button ng-click="ctrl.redial($event)">
-					            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
-					            Redial
-					          </md-button>
-					        </md-menu-item>
-					      </md-menu-content>
-					    </md-menu>
-						<md-checkbox class="md-secondary" ng-model="key"></md-checkbox>
-					</md-list-item>
-				</div> -->
-			<!-- </div> -->
 		</div>
 	</div>
 
