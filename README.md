@@ -11,7 +11,7 @@ You need git to clone this repository. You can get git from http://git-scm.com/.
 
 # Running
 
-git clone https://github.com/nishankjain/crashing-planes.git
+git clone https://github.com/nishankjain/analytics_dashboard.git
 
 Open index.html in your browser.
 
